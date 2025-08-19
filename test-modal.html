@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Test</title>
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+        .modal-content {
+            background: white;
+            border-radius: 8px;
+            width: 50vw;
+            height: 50vh;
+            max-width: 600px;
+            max-height: 600px;
+            min-width: 400px;
+            min-height: 400px;
+            padding: 20px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .hidden { display: none; }
+        button {
+            background: #3b82f6;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Modal Test</h1>
+    <button onclick="openModal()">Open Test Modal</button>
+    
+    <div id="modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h2>Test Modal</h2>
+            <p>This is a test modal to verify modal functionality works.</p>
+            <button onclick="closeModal()">Close Modal</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            console.log('Opening modal...');
+            document.getElementById('modal').classList.remove('hidden');
+        }
+        
+        function closeModal() {
+            console.log('Closing modal...');
+            document.getElementById('modal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
